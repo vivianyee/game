@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-export const useCreateGame = () => {
-  const [isCreatingGame, setIsCreatingGame] = useState(false);
-  const [newGameError, setNewGameError] = useState(undefined);
+export const useUniqueGame = () => {
+  const [isGrabbingUnique, setIsGrabbingUnique] = useState(false);
+  const [isUnique, setIsUnique] = useState(true);
   const [newGameCreated, setNewGameCreated] = useState(undefined);
 
   const createNewGame = async (gameName: string) => {
-    setIsCreatingGame(true);
+    setIsGrabbingUnique(true);
     try {
-      const res = await fetch("/api/game", {
-        method: "POST",
+      const res = await fetch("/api/game/find-unique", {
+        method: "GET",
         body: JSON.stringify({
           gameName,
         }),
       });
-      setIsCreatingGame(false);
+      setIsGrabbingUnique(false);
       if (res.ok) {
         const response = await res.json();
         setNewGameCreated(response);

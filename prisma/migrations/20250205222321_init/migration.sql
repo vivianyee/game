@@ -23,7 +23,7 @@ CREATE TABLE "Player" (
 CREATE TABLE "Team" (
     "id" TEXT NOT NULL,
     "gameId" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
+    "teamName" TEXT NOT NULL,
 
     CONSTRAINT "Team_pkey" PRIMARY KEY ("id")
 );
@@ -42,16 +42,10 @@ CREATE TABLE "GameEvent" (
 CREATE UNIQUE INDEX "Game_name_key" ON "Game"("name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Player_username_key" ON "Player"("username");
+CREATE UNIQUE INDEX "Player_username_teamId_key" ON "Player"("username", "teamId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Player_gameId_key" ON "Player"("gameId");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Player_teamId_key" ON "Player"("teamId");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Team_gameId_key" ON "Team"("gameId");
+CREATE UNIQUE INDEX "Team_teamName_gameId_key" ON "Team"("teamName", "gameId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "GameEvent_gameId_key" ON "GameEvent"("gameId");

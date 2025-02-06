@@ -1,5 +1,5 @@
-import { Game } from "@prisma/client";
 import { Error } from "@/components/Error";
+import { Game } from "@/types/game";
 
 export default async function GameTable() {
   const response = await fetch(process.env.API_URL + "/api/game", {
@@ -12,7 +12,7 @@ export default async function GameTable() {
     return (
       <div>
         {listedGames.map((game) => (
-          <div key={game.id}>{game.name}</div>
+          <div key={game.id}>{game.name} and {game.id}</div>
         ))}
       </div>
     );

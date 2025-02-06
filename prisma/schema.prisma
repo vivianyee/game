@@ -26,22 +26,26 @@ model Game {
 
 model Player {
   id       String   @id @default(cuid())
-  username String   @unique
-  gameId   String   @unique
-  teamId   String   @unique
+  username String
+  gameId   String
+  teamId   String
   joinedAt DateTime @default(now())
 
   game Game @relation(fields: [gameId], references: [id])
   team Team @relation(fields: [teamId], references: [id])
+
+  @@unique([username, teamId])
 }
 
 model Team {
   id     String @id @default(cuid())
-  gameId String @unique
-  name   String
+  gameId String
+  teamName   String
 
   players Player[]
   game    Game     @relation(fields: [gameId], references: [id])
+
+  @@unique([teamName, gameId])
 }
 
 model GameEvent {
