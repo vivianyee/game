@@ -8,7 +8,7 @@ type Props = {
 
 export default async function MainGameScreen({ params }: Props) {
   const gameId = (await params)["game-id"]
-  const response = await fetch(process.env.API_URL + "/api/game/find-game", {
+  const response = await fetch(process.env.API_URL + "/api/game/find-game-by-id", {
     method: "POST",
     body: JSON.stringify({
       gameId,
@@ -21,12 +21,12 @@ export default async function MainGameScreen({ params }: Props) {
     console.log(game)
 
     if (game.players.length === 0) {
-      return <CreatePlayerModal gameId={gameId} teamId={game.teams[0].id} />;
+      return <CreatePlayerModal gameId={gameId} />;
     }
 
     return (
       <div>
-        <h2>WELCOME TO {game.name}</h2>
+        <h2>WELCOME TO {game.gameName}</h2>
       </div>
     );
   }

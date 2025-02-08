@@ -19,7 +19,6 @@ export async function POST(request: NextRequest) {
       },
       include: {
         players: true,
-        teams: true
       },
     });
     

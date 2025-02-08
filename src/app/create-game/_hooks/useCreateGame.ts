@@ -1,10 +1,8 @@
-import { Game } from "@/types/game";
 import { useState } from "react";
 
 export const useCreateGame = () => {
   const [isCreatingGame, setIsCreatingGame] = useState(false);
   const [newGameError, setNewGameError] = useState('');
-  const [newGameCreated, setNewGameCreated] = useState<Game | undefined>(undefined);
 
   const createNewGame = async (gameName: string) => {
     setIsCreatingGame(true);
@@ -18,19 +16,16 @@ export const useCreateGame = () => {
       setIsCreatingGame(false);
       if (res.ok) {
         const response = await res.json();
-        setNewGameCreated(response);
         return response;
       } else {
         const { error } = await res.json();
-        setNewGameError("make game unique");
-        throw new Error("Can't create game", error);
+        setNewGameError(error);
       }
     } catch {
-      setNewGameError("make game unique");
+      setNewGameError("Failed to create game, please try again later.");
       setIsCreatingGame(false);
-      return undefined;
     }
   };
 
-  return { isCreatingGame, newGameCreated, newGameError, createNewGame };
+  return { isCreatingGame, newGameError, createNewGame };
 };

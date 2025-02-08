@@ -1,5 +1,5 @@
-import { NextAuthProvider } from "@/contexts/nextauthprovider";
 import "./globals.css";
+import { WebSocketProvider } from "@/contexts/WebSocketProvider";
 
 export default async function RootLayout({
   children,
@@ -9,9 +9,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NextAuthProvider>
-          <div className="justifyCenter fullScreen">{children}</div>
-        </NextAuthProvider>
+          <WebSocketProvider>
+            <div className="justifyCenter fullScreen">{children}</div>
+          </WebSocketProvider>
       </body>
     </html>
   );

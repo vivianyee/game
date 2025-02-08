@@ -1,40 +1,30 @@
-import { Player } from "@/types/game";
 import { useState } from "react";
 
 export const useCreatePlayer = () => {
   const [isCreatingPlayer, setIsCreatingPlayer] = useState(false);
   const [newPlayerError, setNewPlayerError] = useState("");
-  const [newPlayerCreated, setNewPlayerCreated] = useState<Player | undefined>(
-    undefined
-  );
 
-  const createNewPlayer = async (
-    username: string,
-    gameId: string,
-    teamId: string
-  ) => {
+  const createNewPlayer = async (playerName: string, gameId: string) => {
     setIsCreatingPlayer(true);
     try {
       const res = await fetch("/api/player", {
         method: "POST",
         body: JSON.stringify({
-          username,
+          playerName,
           gameId,
-          teamId,
         }),
       });
       setIsCreatingPlayer(false);
       if (res.ok) {
         const response = await res.json();
-        setNewPlayerCreated(response);
         return response;
       } else {
         const { error } = await res.json();
-        setNewPlayerError("make Player unique");
+        setNewPlayerError(error);
         throw new Error("Can't create Player", error);
       }
     } catch {
-      setNewPlayerError("make Player unique");
+      setNewPlayerError("Failed to create player.");
       setIsCreatingPlayer(false);
       return undefined;
     }
@@ -42,7 +32,6 @@ export const useCreatePlayer = () => {
 
   return {
     isCreatingPlayer,
-    newPlayerCreated,
     newPlayerError,
     createNewPlayer,
   };

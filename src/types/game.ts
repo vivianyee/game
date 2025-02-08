@@ -1,19 +1,17 @@
 export interface Game {
   id: string;
-  name: string;
+  gameName: string;
+  createdAt: Date;
+  updatedAt: Date;
+
   players: Player[];
-  teams: Team[];
 }
 
 export interface Player {
   id: string;
-  username: string;
+  playerName: string;
   gameId: string;
-  teamId: string;
-}
+  joinedAt: Date;
 
-export interface Team {
-  id: string;
-  gameId: string;
-  teamName: string;
+  game: Game;
 }

@@ -15,44 +15,20 @@ datasource db {
 
 model Game {
   id        String   @id @default(cuid())
-  name      String   @unique
+  gameName      String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  players Player[]
-  events  GameEvent[]
-  teams   Team[]
+  players   Player[]
 }
 
 model Player {
   id       String   @id @default(cuid())
-  username String
+  playerName String
   gameId   String
-  teamId   String
   joinedAt DateTime @default(now())
 
   game Game @relation(fields: [gameId], references: [id])
-  team Team @relation(fields: [teamId], references: [id])
 
-  @@unique([username, teamId])
-}
-
-model Team {
-  id     String @id @default(cuid())
-  gameId String
-  teamName   String
-
-  players Player[]
-  game    Game     @relation(fields: [gameId], references: [id])
-
-  @@unique([teamName, gameId])
-}
-
-model GameEvent {
-  id        String   @id @default(cuid())
-  gameId    String   @unique
-  details   Json
-  timestamp DateTime @default(now())
-
-  game Game @relation(fields: [gameId], references: [id])
+  @@unique([playerName, gameId])
 }

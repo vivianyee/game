@@ -12,7 +12,7 @@ export default async function GameTable() {
     return (
       <div>
         {listedGames.map((game) => (
-          <div key={game.id}>{game.name} and {game.id}</div>
+          <div key={game.id}>{game.gameName}</div>
         ))}
       </div>
     );
