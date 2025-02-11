@@ -23,7 +23,7 @@ const initialWebSocket: WebSocketType = {
 };
 
 type GamesWebSocket = {
-  [key: string]: Map<WebSocket, string>; // Game name to player websocket to player name
+  [key: string]: { gameName: string; players: Map<WebSocket, string> }; // Game name to player websocket to player name
 };
 
 const webSocketPlayerGame = new Map<WebSocket, string>(); // WebSockets to game name
@@ -50,26 +50,31 @@ export const WebSocketProvider = ({ children }: Props) => {
     socket.onmessage = (event) => {
       console.log("Message from server:", event.data);
       try {
-        console.log(event)
-        const json = JSON.parse(event.data.match(/{.*}/));
+        const json = JSON.parse(event.data);
         switch (json.type) {
           case "addPlayer":
-            const playerGameName = json.gameName;
+            const addPlayerData = json;
             setGames((prevGames) => {
-              const newGames = prevGames;
-              if (!newGames[playerGameName]) {
-                newGames[playerGameName] = new Map<WebSocket, string>();
+              const newGames = { ...prevGames };
+              if (!newGames[addPlayerData.gameId]) {
+                newGames[addPlayerData.gameId] = {
+                  gameName: addPlayerData.gameName,
+                  players: new Map<WebSocket, string>(),
+                };
               }
-              newGames[playerGameName].set(socket, json.playerName);
-              webSocketPlayerGame.set(socket, playerGameName);
+              newGames[addPlayerData].players.set(socket, json.playerName);
+              webSocketPlayerGame.set(socket, addPlayerData);
               return newGames;
             });
           case "addGame":
-            const gameName = json.gameName;
+            const addGameData = json;
             setGames((prevGames) => {
-              const newGames = prevGames;
-              if (!newGames[gameName]) {
-                newGames[gameName] = new Map<WebSocket, string>();
+              const newGames = { ...prevGames };
+              if (!newGames[addGameData.gameId]) {
+                newGames[addGameData.gameId] = {
+                  gameName: addGameData.gameName,
+                  players: new Map<WebSocket, string>(),
+                };
               }
               return newGames;
             });
@@ -83,16 +88,16 @@ export const WebSocketProvider = ({ children }: Props) => {
 
     return () => {
       setGames((prevGames) => {
-        const newGames = prevGames;
+        const newGames = { ...prevGames };
         const gameName = webSocketPlayerGame.get(socket);
         if (gameName) {
-          newGames[gameName].delete(socket);
+          newGames[gameName].players.delete(socket);
         }
         return newGames;
       });
       socket.close();
     };
-  }, []);
+  }, [setGames]);
 
   const ret = {
     isReady,

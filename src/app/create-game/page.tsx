@@ -15,10 +15,12 @@ export default function CreateGame() {
 
   const onClickCreate = async () => {
     const game = await createNewGame(gameName);
+
     if (send && game) {
       send(
         JSON.stringify({
           type: "addGame",
+          gameId: game.id,
           gameName: game.gameName,
         })
       );

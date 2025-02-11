@@ -1,32 +1,30 @@
+"use client";
+
 import { Error } from "@/components/Error";
-import { Game } from "@/types/game";
 import CreatePlayerModal from "./CreatePlayerModal";
+import { useContext } from "react";
+import { WebSocketContext } from "@/contexts/WebSocketProvider";
+import { usePathname } from "next/navigation";
 
-type Props = {
-  params: Promise<{ "game-id": string }>;
-};
+export default function MainGameScreen() {
+  const { games } = useContext(WebSocketContext);
+  const searchParams = usePathname();
 
-export default async function MainGameScreen({ params }: Props) {
-  const gameId = (await params)["game-id"]
-  const response = await fetch(process.env.API_URL + "/api/game/find-game-by-id", {
-    method: "POST",
-    body: JSON.stringify({
-      gameId,
-    }),
-    cache: "no-store",
-  });
-  
-  if (response.ok) {
-    const game: Game = await response.json();
-    console.log(game)
+  const gameId = searchParams.substring(1);
+  const gameData = games[gameId];
 
-    if (game.players.length === 0) {
-      return <CreatePlayerModal gameId={gameId} />;
-    }
-
+  if (gameData) {
+    const playerData = Array.from(gameData.players.values());
     return (
       <div>
-        <h2>WELCOME TO {game.gameName}</h2>
+        <h2>WELCOME TO {gameData.gameName}</h2>
+        <h2>
+          Players:
+          {playerData.map((player) => {
+            return <p>{player}</p>;
+          })}
+        </h2>
+        <CreatePlayerModal gameId={gameId} />
       </div>
     );
   }

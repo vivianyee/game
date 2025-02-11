@@ -1,22 +1,21 @@
+"use client";
+
 import { Error } from "@/components/Error";
+import { WebSocketContext } from "@/contexts/WebSocketProvider";
 import { Game } from "@/types/game";
+import { useContext } from "react";
 
-export default async function GameTable() {
-  const response = await fetch(process.env.API_URL + "/api/game", {
-    method: "GET",
-    cache: "no-store",
-  });
-  if (response.ok) {
-    const listedGames: Game[] = await response.json();
+export default function GameTable() {
+  const { games } = useContext(WebSocketContext);
 
-    return (
-      <div>
-        {listedGames.map((game) => (
-          <div key={game.id}>{game.gameName}</div>
-        ))}
-      </div>
-    );
-  }
+  const gamesData = Object.values(games);
+  return (
+    <div>
+      {gamesData.map((gamedata) => {
+        return <div key={gamedata.gameName}>{gamedata.gameName}</div>;
+      })}
+    </div>
+  );
 
   return <Error />;
 }

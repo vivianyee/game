@@ -7,9 +7,7 @@ export default function JoinGame() {
   return (
     <div>
       <JoinGameInput />
-      <Suspense fallback={<Loading />}>
-        <GameTable />
-      </Suspense>
+      <GameTable />
     </div>
   );
 }

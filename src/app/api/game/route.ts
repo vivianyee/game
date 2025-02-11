@@ -4,7 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const games = await db.game.findMany();
+    const games = await db.game.findMany({
+      include: { players: { select: { playerName: true } } },
+    });
     return NextResponse.json(games, { status: 200 });
   } catch (error) {
     console.error("Error fetching games:", error);

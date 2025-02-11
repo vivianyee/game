@@ -23,7 +23,8 @@ export default function CreatePlayerModal({ gameId }: Props) {
       send(
         JSON.stringify({
           type: "addPlayer",
-          name: newPlayerCreated.id,
+          playerName: newPlayerCreated.id,
+          gameId: gameId,
           gameName: newPlayerCreated.game.gameName,
         })
       );
