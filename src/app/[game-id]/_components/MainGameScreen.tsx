@@ -14,7 +14,7 @@ export default function MainGameScreen() {
   const gameData = games[gameId];
 
   if (gameData) {
-    const playerData = Array.from(gameData.players.values());
+    const playerData = Object.values(gameData.players);
     return (
       <div>
         <h2>WELCOME TO {gameData.gameName}</h2>

@@ -2,7 +2,6 @@
 
 import { Error } from "@/components/Error";
 import { WebSocketContext } from "@/contexts/WebSocketProvider";
-import { Game } from "@/types/game";
 import { useContext } from "react";
 
 export default function GameTable() {
@@ -16,6 +15,4 @@ export default function GameTable() {
       })}
     </div>
   );
-
-  return <Error />;
 }
