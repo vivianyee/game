@@ -21,8 +21,7 @@ const handle = app.getRequestHandler();
 //     }
 //   }
 // }
-const game = {};
-const webSocketPlayerGame = {};
+const game = { webSocketPlayerGame: {} };
 
 app.prepare().then(() => {
   const server = createServer((req, res) => {
@@ -46,12 +45,12 @@ app.prepare().then(() => {
         const dbPlayers = {};
         dbGame.players.forEach((dbPlayer) => {
           dbPlayers[dbPlayer.socketId] = dbPlayer.playerName;
-          webSocketPlayerGame[dbPlayer.socketId] = dbGame.id;
+          game.webSocketPlayerGame[dbPlayer.socketId] = dbGame.id;
         });
         game[dbGame.id] = {
           gameName: dbGame.gameName,
           turn: 0,
-          players: dbPlayers,
+          players: { dbPlayers },
         };
       });
 
@@ -74,16 +73,19 @@ app.prepare().then(() => {
                       players: {},
                     };
                   }
+                  break;
                 case "addPlayer":
                   if (game[data.gameId]) {
                     playerSocketId = data.socketId;
                     game[data.gameId].players[data.socketId] = data.playerName;
-                    webSocketPlayerGame[data.socketId] = data.gameId;
+                    game.webSocketPlayerGame[data.socketId] = data.gameId;
                   }
+                  break;
                 case "startGame":
                   if (game[data.gameId]) {
                     game[data.gameId].turn = 0;
                   }
+                  break;
               }
               client.send(JSON.stringify(game));
             }
@@ -95,8 +97,8 @@ app.prepare().then(() => {
             await prisma.player.delete({
               where: { socketId: playerSocketId },
             });
-            const gameId = webSocketPlayerGame[playerSocketId];
-            delete webSocketPlayerGame[playerSocketId];
+            const gameId = game.webSocketPlayerGame[playerSocketId];
+            delete game.webSocketPlayerGame[playerSocketId];
             if (gameId) {
               delete game[gameId].players[playerSocketId];
             }

@@ -1,15 +1,18 @@
 "use client";
 
-import { GamesWebSocket } from "@/types/game";
-import { createContext, useState, useEffect, useRef } from "react";
+import { GamesContext, GamesWebSocket } from "@/types/game";
+import { createContext, useState, useEffect, useRef, useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { SocketIdContext } from "./SocketIdProvider";
 
 type Props = {
   children?: React.ReactNode;
 };
 
 type WebSocketType = {
+  webSocketPlayerGame: { [key: string]: string };
   isReady: boolean;
-  games: GamesWebSocket;
+  games: GamesContext;
   send:
     | ((
         data: string | ArrayBufferLike | Blob | ArrayBufferView<ArrayBufferLike>
@@ -18,6 +21,7 @@ type WebSocketType = {
 };
 
 const initialWebSocket: WebSocketType = {
+  webSocketPlayerGame: {},
   isReady: false,
   games: {},
   send: undefined,
@@ -56,9 +60,15 @@ export const WebSocketProvider = ({ children }: Props) => {
     };
   }, [setGames]);
 
-  const ret = {
+  const gameSend = { ...games };
+  delete gameSend.webSocketPlayerGame;
+
+  const ret: WebSocketType = {
     isReady,
-    games,
+    webSocketPlayerGame: games.webSocketPlayerGame
+      ? games.webSocketPlayerGame
+      : {},
+    games: gameSend,
     send: ws.current
       ? ws.current.send.bind(ws.current)
       : () => {

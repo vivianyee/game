@@ -16,14 +16,18 @@ export interface Player {
   game: Game;
 }
 
-export type GamesWebSocket = {
+export type GamesContext = {
   [key: string]: {
     turn: number | undefined;
     usedCard: number | undefined;
     gameName: string;
     players: { [key: string]: string };
-  }; // Game name to player websocket to player name
+  };
 };
+
+export type GamesWebSocket = {
+  webSocketPlayerGame?: { [key: string]: string };
+} & GamesContext;
 
 export type GameWebSocket = {
   turn: number | undefined;
