@@ -1,4 +1,4 @@
-import db from "@/modules/db";
+import { prisma } from "../../../../../lib/Prisma"
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const game = await db.game.findUnique({
+    const game = await prisma.game.findUnique({
       where: {
         id: gameId,
       },

@@ -1,4 +1,4 @@
-import db from "@/modules/db";
+import { prisma } from "../../../../lib/Prisma"
 import { Prisma } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const newPlayer = await db.player.create({
+    const newPlayer = await prisma.player.create({
       data: { playerName, gameId },
       include: {
         game: {

@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-
-export type GamesWebSocket = {
-  [key: string]: Map<WebSocket, string>; // Game name to player websocket to player name
-};
+import { GamesWebSocket } from "./WebSocketProvider";
 
 export type WebSocketType = {
   isReady: boolean;

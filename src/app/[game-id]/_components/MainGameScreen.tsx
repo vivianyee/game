@@ -2,29 +2,32 @@
 
 import { Error } from "@/components/Error";
 import CreatePlayerModal from "./CreatePlayerModal";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { WebSocketContext } from "@/contexts/WebSocketProvider";
 import { usePathname } from "next/navigation";
+import StartingScreen from "./StartingScreen/StartingScreen";
+import { GameWebSocket } from "@/types/game";
+import GameScreen from "./GameScreen/GameScreen";
 
 export default function MainGameScreen() {
+  const [playerName, setPlayerName] = useState<string | undefined>(undefined);
   const { games } = useContext(WebSocketContext);
   const searchParams = usePathname();
 
   const gameId = searchParams.substring(1);
-  const gameData = games[gameId];
+  const gameData: GameWebSocket = games[gameId];
 
   if (gameData) {
-    const playerData = Object.values(gameData.players);
     return (
       <div>
         <h2>WELCOME TO {gameData.gameName}</h2>
-        <h2>
-          Players:
-          {playerData.map((player) => {
-            return <p>{player}</p>;
-          })}
-        </h2>
-        <CreatePlayerModal gameId={gameId} />
+        {!playerName ? (
+          <CreatePlayerModal gameId={gameId} setPlayerName={setPlayerName} />
+        ) : gameData.turn ? (
+          <StartingScreen gameId={gameId} players={gameData.players} />
+        ) : (
+          <GameScreen gameData={gameData} />
+        )}
       </div>
     );
   }

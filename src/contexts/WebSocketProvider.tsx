@@ -1,5 +1,6 @@
 "use client";
 
+import { GamesWebSocket } from "@/types/game";
 import { createContext, useState, useEffect, useRef } from "react";
 
 type Props = {
@@ -22,10 +23,6 @@ const initialWebSocket: WebSocketType = {
   send: undefined,
 };
 
-type GamesWebSocket = {
-  [key: string]: { gameName: string; players: { [key: string]: string } }; // Game name to player websocket to player name
-};
-
 export const WebSocketContext = createContext(initialWebSocket);
 
 export const WebSocketProvider = ({ children }: Props) => {
@@ -46,7 +43,7 @@ export const WebSocketProvider = ({ children }: Props) => {
       setIsReady(false);
       console.log("WebSocket is closed!");
     };
-    
+
     socket.onmessage = (event) => {
       console.log("Message from server:", event.data);
       setGames(JSON.parse(event.data));

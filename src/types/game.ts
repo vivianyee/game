@@ -15,3 +15,19 @@ export interface Player {
 
   game: Game;
 }
+
+export type GamesWebSocket = {
+  [key: string]: {
+    turn: number | undefined;
+    usedCard: number | undefined;
+    gameName: string;
+    players: { [key: string]: string };
+  }; // Game name to player websocket to player name
+};
+
+export type GameWebSocket = {
+  turn: number | undefined;
+  usedCard: number | undefined;
+  gameName: string;
+  players: { [key: string]: string };
+};

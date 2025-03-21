@@ -1,10 +1,10 @@
-import db from "@/modules/db";
+import { prisma } from "../../../../lib/Prisma"
 import { Prisma } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const games = await db.game.findMany({
+    const games = await prisma.game.findMany({
       include: { players: { select: { playerName: true } } },
     });
     return NextResponse.json(games, { status: 200 });
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const newGame = await db.game.create({
+    const newGame = await prisma.game.create({
       data: {
         gameName,
       },

@@ -25,6 +25,7 @@ model Game {
 model Player {
   id       String   @id @default(cuid())
   playerName String
+  socketId String   @unique
   gameId   String
   joinedAt DateTime @default(now())
 

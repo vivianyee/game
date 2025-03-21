@@ -1,0 +1,110 @@
+{
+    "app": [
+        {
+            "cardName": "Nachos",
+            "description": "Yummy, cheesey, beany, crispy!",
+            "type": "app"
+        },
+        {
+            "cardName": "Fries",
+            "description": "French or not french?",
+            "type": "app"
+        },
+        {
+            "cardName": "Salad",
+            "description": "Fresh and crispy lettuce...",
+            "type": "app"
+        },
+        {
+            "cardName": "Soup",
+            "description": "Don't burn your tongue!",
+            "type": "app"
+        },
+        {
+            "cardName": "Bread",
+            "description": "Butter or oil and vinnegrette?",
+            "type": "app"
+        }
+    ],
+    "main":[
+        {
+            "cardName": "Burger",
+            "description": "Triple patty please!",
+            "type": "main"
+        },
+        {
+            "cardName": "Steak",
+            "description": "Medium rare is the best rare!",
+            "type": "main"
+        },
+        {
+            "cardName": "Pizza",
+            "description": "What's the best pizza topping?",
+            "type": "main"
+        },
+        {
+            "cardName": "Pasta",
+            "description": "Alfredo, marinara, carbonara, cacio e pepe?",
+            "type": "main"
+        },
+        {
+            "cardName": "Tacos",
+            "description": "Soft shell or hard shell?",
+            "type": "main"
+        }
+    ],
+    "dessert":[
+        {
+            "cardName": "Pudding",
+            "description": "Jiggle jiggle...",
+            "type": "dessert"
+        },
+        {
+            "cardName": "Cheesecake",
+            "description": "Who decided cheese belongs here?",
+            "type": "dessert"
+        },
+        {
+            "cardName": "Ice Cream",
+            "description": "I'm melting!",
+            "type": "dessert"
+        },
+        {
+            "cardName": "Brownie",
+            "description": "Fudgey inside and crispy outside...",
+            "type": "dessert"
+        },
+        {
+            "cardName": "Pie",
+            "description": "Apple, Blueberry, OR POT!",
+            "type": "dessert"
+        }
+    ],
+    "drink":[
+        {
+            "cardName": "Soda",
+            "description": "Crisp and refreshing!",
+            "type": "drink"
+        },
+        {
+            "cardName": "Milkshake",
+            "description": "Brings all the boys to the yard...",
+            "type": "drink"
+        },
+        {
+            "cardName": "Juice",
+            "description": "If your favorite is tomato... ew...",
+            "type": "drink"
+        },
+        {
+            "cardName": "Water",
+            "description": "THE BEST DRINK!",
+            "type": "drink"
+        },
+        {
+            "cardName": "Wine",
+            "description": "Just one glass couldnt hurt!",
+            "type": "drink"
+        }
+    ]
+}

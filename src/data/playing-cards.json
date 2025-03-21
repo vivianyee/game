@@ -1,0 +1,1521 @@
+{
+    "playing-cards": [
+        {
+            "cardName": "Nachos only",
+            "description": "Take a bite out of someone else's nacho!",
+            "type": "bite",
+            "affect": {
+                "app0": 1
+            }
+        },
+        {
+            "cardName": "Fries only",
+            "description": "Take a bite out of someone else's fry!",
+            "type": "bite",
+            "affect": {
+                "app1": 1
+            }
+        },
+        {
+            "cardName": "Salad only",
+            "description": "Take a bite out of someone else's salad!",
+            "type": "bite",
+            "affect": {
+                "app2": 1
+            }
+        },
+        {
+            "cardName": "Soup only",
+            "description": "Take a slurp out of someone else's soup!",
+            "type": "bite",
+            "affect": {
+                "app3": 1
+            }
+        },
+        {
+            "cardName": "Bread only",
+            "description": "Take a bite out of someone else's bread!",
+            "type": "bite",
+            "affect": {
+                "app4": 1
+            }
+        },
+        {
+            "cardName": "Burger only",
+            "description": "Take a bite out of someone else's burger!",
+            "type": "bite",
+            "affect": {
+                "main0": 1
+            }
+        },
+        {
+            "cardName": "Steak only",
+            "description": "Take a bite out of someone else's steak!",
+            "type": "bite",
+            "affect": {
+                "main1": 1
+            }
+        },
+        {
+            "cardName": "Pizza only",
+            "description": "Take a bite out of someone else's pizza!",
+            "type": "bite",
+            "affect": {
+                "main2": 1
+            }
+        },
+        {
+            "cardName": "Pasta only",
+            "description": "Take a bite out of someone else's pasta!",
+            "type": "bite",
+            "affect": {
+                "main3": 1
+            }
+        },
+        {
+            "cardName": "Tacos only",
+            "description": "Take a bite out of someone else's taco!",
+            "type": "bite",
+            "affect": {
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Pudding only",
+            "description": "Take a bite out of someone else's pudding!",
+            "type": "bite",
+            "affect": {
+                "dessert0": 1
+            }
+        },
+        {
+            "cardName": "Cheesecake only",
+            "description": "Take a bite out of someone else's cheesecake!",
+            "type": "bite",
+            "affect": {
+                "dessert1": 1
+            }
+        },
+        {
+            "cardName": "Ice cream only",
+            "description": "Take a lick out of someone else's ice cream!",
+            "type": "bite",
+            "affect": {
+                "dessert2": 1
+            }
+        },
+        {
+            "cardName": "Brownie only",
+            "description": "Take a bite out of someone else's brownie!",
+            "type": "bite",
+            "affect": {
+                "dessert3": 1
+            }
+        },
+        {
+            "cardName": "Pie only",
+            "description": "Take a bite out of someone else's pie!",
+            "type": "bite",
+            "affect": {
+                "dessert4": 1
+            }
+        },
+        {
+            "cardName": "Soda only",
+            "description": "Take a drink out of someone else's soda!",
+            "type": "bite",
+            "affect": {
+                "drink0": 1
+            }
+        },
+        {
+            "cardName": "Milkshake only",
+            "description": "Take a drink out of someone else's milkshake!",
+            "type": "bite",
+            "affect": {
+                "drink1": 1
+            }
+        },
+        {
+            "cardName": "Juice only",
+            "description": "Take a drink out of someone else's juice!",
+            "type": "bite",
+            "affect": {
+                "drink2": 1
+            }
+        },
+        {
+            "cardName": "Water only",
+            "description": "Take a drink out of someone else's water!",
+            "type": "bite",
+            "affect": {
+                "drink3": 1
+            }
+        },
+        {
+            "cardName": "Wine only",
+            "description": "Take a drink out of someone else's wine!",
+            "type": "bite",
+            "affect": {
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "Hand held apps",
+            "description": "Take a bite out of someone else's nacho or fry!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "app1": 1
+            }
+        },
+        {
+            "cardName": "Olive garden unlimited",
+            "description": "Take a bite out of someone else's soup or salad!",
+            "type": "bite",
+            "affect": {
+                "app2": 1,
+                "app3": 1
+            }
+        },
+        {
+            "cardName": "Bread!",
+            "description": "Take a bite out of someone else's bread!",
+            "type": "bite",
+            "affect": {
+                "app4": 1
+            }
+        },
+        {
+            "cardName": "Hand held mains",
+            "description": "Take a bite out of someone else's burger or taco!",
+            "type": "bite",
+            "affect": {
+                "main0": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "We're in Italy!",
+            "description": "Take a bite out of someone else's pizza or pasta!",
+            "type": "bite",
+            "affect": {
+                "main2": 1,
+                "main3": 1
+            }
+        },
+        {
+            "cardName": "Steak!",
+            "description": "Take a bite out of someone else's steak!",
+            "type": "bite",
+            "affect": {
+                "main1": 1
+            }
+        },
+        {
+            "cardName": "Cold desserts",
+            "description": "Take a bite out of someone else's pudding or ice cream!",
+            "type": "bite",
+            "affect": {
+                "dessert0": 1,
+                "dessert2": 1
+            }
+        },
+        {
+            "cardName": "A slice or the whole?",
+            "description": "Take a bite out of someone else's cheesecake or pie!",
+            "type": "bite",
+            "affect": {
+                "dessert1": 1,
+                "dessert4": 1
+            }
+        },
+        {
+            "cardName": "Brownie!",
+            "description": "Take a bite out of someone else's brownie!",
+            "type": "bite",
+            "affect": {
+                "dessert3": 1
+            }
+        },
+        {
+            "cardName": "Either can be sparkling",
+            "description": "Take a drink out of someone else's soda or wine!",
+            "type": "bite",
+            "affect": {
+                "drink0": 1,
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "Lemon in both",
+            "description": "Take a drink out of someone else's juice or water!",
+            "type": "bite",
+            "affect": {
+                "drink2": 1,
+                "drink3": 1
+            }
+        },
+        {
+            "cardName": "Milkshake!",
+            "description": "Take a drink out of someone else's milkshake!",
+            "type": "bite",
+            "affect": {
+                "drink1": 1
+            }
+        },
+        {
+            "cardName": "Are we in Mexico?",
+            "description": "Take a bite out of someone else's nacho or taco!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Do you dip it or is that gross?",
+            "description": "Take a bite out of someone else's fry or milkshake!",
+            "type": "bite",
+            "affect": {
+                "app1": 1,
+                "dessert1": 1
+            }
+        },
+        {
+            "cardName": "You think you're healthy? Yea.. you are..",
+            "description": "Take a bite out of someone else's salad or water!",
+            "type": "bite",
+            "affect": {
+                "app2": 1,
+                "drink3": 1
+            }
+        },
+        {
+            "cardName": "Both are bowls of glub",
+            "description": "Take a slurp out of someone else's soup or pudding!",
+            "type": "bite",
+            "affect": {
+                "app3": 1,
+                "dessert0": 1
+            }
+        },
+        {
+            "cardName": "Carb overload!",
+            "description": "Take a bite out of someone else's bread or pasta!",
+            "type": "bite",
+            "affect": {
+                "app4": 1,
+                "main3": 1
+            }
+        },
+        {
+            "cardName": "Now this is a hearty combo...",
+            "description": "Take a bite out of someone else's burger or brownie!",
+            "type": "bite",
+            "affect": {
+                "main0": 1,
+                "dessert3": 1
+            }
+        },
+        {
+            "cardName": "I'll take you somewhere fancy!",
+            "description": "Take a bite out of someone else's steak or wine!",
+            "type": "bite",
+            "affect": {
+                "main1": 1,
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "Cheesey cheesey!",
+            "description": "Take a bite out of someone else's pizza or cheesecake!",
+            "type": "bite",
+            "affect": {
+                "main2": 1,
+                "dessert1": 1
+            }
+        },
+        {
+            "cardName": "A float???",
+            "description": "Take a bite out of someone else's ice cream or soda!",
+            "type": "bite",
+            "affect": {
+                "dessert2": 1,
+                "drink0": 1
+            }
+        },
+        {
+            "cardName": "Apple, cranberry, which?",
+            "description": "Take a bite out of someone else's pie or juice!",
+            "type": "bite",
+            "affect": {
+                "dessert4": 1,
+                "drink2": 1
+            }
+        },
+        {
+            "cardName": "Anything goes!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Anything goes!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Anything goes!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "MINE NOW!",
+            "description": "Demolish anyone's food! (2 bites)",
+            "type": "bite",
+            "affect": {
+                "app0": 2,
+                "app1": 2,
+                "app2": 2,
+                "app3": 2,
+                "app4": 2,
+                "dessert0": 2,
+                "dessert1": 2,
+                "dessert2": 2,
+                "dessert3": 2,
+                "dessert4": 2,
+                "drink0": 2,
+                "drink1": 2,
+                "drink2": 2,
+                "drink3": 2,
+                "drink4": 2,
+                "main0": 2,
+                "main1": 2,
+                "main2": 2,
+                "main3": 2,
+                "main4": 2
+            }
+        },
+        {
+            "cardName": "MINE NOW!",
+            "description": "Demolish anyone's food! (2 bites)",
+            "type": "bite",
+            "affect": {
+                "app0": 2,
+                "app1": 2,
+                "app2": 2,
+                "app3": 2,
+                "app4": 2,
+                "dessert0": 2,
+                "dessert1": 2,
+                "dessert2": 2,
+                "dessert3": 2,
+                "dessert4": 2,
+                "drink0": 2,
+                "drink1": 2,
+                "drink2": 2,
+                "drink3": 2,
+                "drink4": 2,
+                "main0": 2,
+                "main1": 2,
+                "main2": 2,
+                "main3": 2,
+                "main4": 2
+            }
+        },
+        {
+            "cardName": "MINE NOW!",
+            "description": "Demolish anyone's food! (2 bites)",
+            "type": "bite",
+            "affect": {
+                "app0": 2,
+                "app1": 2,
+                "app2": 2,
+                "app3": 2,
+                "app4": 2,
+                "dessert0": 2,
+                "dessert1": 2,
+                "dessert2": 2,
+                "dessert3": 2,
+                "dessert4": 2,
+                "drink0": 2,
+                "drink1": 2,
+                "drink2": 2,
+                "drink3": 2,
+                "drink4": 2,
+                "main0": 2,
+                "main1": 2,
+                "main2": 2,
+                "main3": 2,
+                "main4": 2
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my appetizer",
+            "description": "Take a bite out of anyone's appetizer!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my appetizer",
+            "description": "Take a bite out of anyone's appetizer!",
+            "type": "bite",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my main",
+            "description": "Take a bite out of anyone's main!",
+            "type": "bite",
+            "affect": {
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my main",
+            "description": "Take a bite out of anyone's main!",
+            "type": "bite",
+            "affect": {
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my dessert",
+            "description": "Take a bite out of anyone's dessert!",
+            "type": "bite",
+            "affect": {
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my dessert",
+            "description": "Take a bite out of anyone's dessert!",
+            "type": "bite",
+            "affect": {
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my drink",
+            "description": "Take a bite out of anyone's drink!",
+            "type": "bite",
+            "affect": {
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "I'm not too picky with my drink",
+            "description": "Take a bite out of anyone's drink!",
+            "type": "bite",
+            "affect": {
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "I want more apps...",
+            "description": "Remove a bite from any app by cooking!",
+            "type": "cook",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1
+            }
+        },
+        {
+            "cardName": "I want more apps...",
+            "description": "Remove a bite from any app by cooking!",
+            "type": "cook",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1
+            }
+        },
+        {
+            "cardName": "I want more mains...",
+            "description": "Remove a bite from any main by cooking!",
+            "type": "cook",
+            "affect": {
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I want more mains...",
+            "description": "Remove a bite from any main by cooking!",
+            "type": "cook",
+            "affect": {
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I want more dessert...",
+            "description": "Remove a bite from any dessert by cooking!",
+            "type": "cook",
+            "affect": {
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1
+            }
+        },
+        {
+            "cardName": "I want more dessert...",
+            "description": "Remove a bite from any dessert by cooking!",
+            "type": "cook",
+            "affect": {
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1
+            }
+        },
+        {
+            "cardName": "I want more drinks...",
+            "description": "Remove a bite from any drink by cooking!",
+            "type": "cook",
+            "affect": {
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "I want more drinks...",
+            "description": "Remove a bite from any drink by cooking!",
+            "type": "cook",
+            "affect": {
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1
+            }
+        },
+        {
+            "cardName": "Time to make more...",
+            "description": "Remove a bite from any food by cooking!",
+            "type": "cook",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Time to make more...",
+            "description": "Remove a bite from any food by cooking!",
+            "type": "cook",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Time to make more...",
+            "description": "Remove a bite from any food by cooking!",
+            "type": "cook",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Time to make more...",
+            "description": "Remove a bite from any food by cooking!",
+            "type": "cook",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "GIVE IT BACK",
+            "description": "Cook an entire meal back!",
+            "type": "cook",
+            "affect": {
+                "app0": 3,
+                "app1": 3,
+                "app2": 3,
+                "app3": 3,
+                "app4": 3,
+                "dessert0": 3,
+                "dessert1": 3,
+                "dessert2": 3,
+                "dessert3": 3,
+                "dessert4": 3,
+                "drink0": 3,
+                "drink1": 3,
+                "drink2": 3,
+                "drink3": 3,
+                "drink4": 3,
+                "main0": 3,
+                "main1": 3,
+                "main2": 3,
+                "main3": 3,
+                "main4": 3
+            }
+        },
+        {
+            "cardName": "GIVE IT BACK",
+            "description": "Cook an entire meal back!",
+            "type": "cook",
+            "affect": {
+                "app0": 3,
+                "app1": 3,
+                "app2": 3,
+                "app3": 3,
+                "app4": 3,
+                "dessert0": 3,
+                "dessert1": 3,
+                "dessert2": 3,
+                "dessert3": 3,
+                "dessert4": 3,
+                "drink0": 3,
+                "drink1": 3,
+                "drink2": 3,
+                "drink3": 3,
+                "drink4": 3,
+                "main0": 3,
+                "main1": 3,
+                "main2": 3,
+                "main3": 3,
+                "main4": 3
+            }
+        },
+        {
+            "cardName": "A thief!",
+            "description": "Take a random card from someone's hand",
+            "type": "spice",
+            "affect": {
+                "player0": 0,
+                "player1": 0,
+                "player2": 0,
+                "player3": 0,
+                "player4": 0
+            }
+        },
+        {
+            "cardName": "A thief!",
+            "description": "Take a random card from someone's hand",
+            "type": "spice",
+            "affect": {
+                "player0": 0,
+                "player1": 0,
+                "player2": 0,
+                "player3": 0,
+                "player4": 0
+            }
+        },
+        {
+            "cardName": "A thief!",
+            "description": "Take a random card from someone's hand",
+            "type": "spice",
+            "affect": {
+                "player0": 0,
+                "player1": 0,
+                "player2": 0,
+                "player3": 0,
+                "player4": 0
+            }
+        },
+        {
+            "cardName": "RESET",
+            "description": "Everyone shuffles their hand",
+            "type": "spice",
+            "affect": {
+                "all": 1
+            }
+        },
+        {
+            "cardName": "RESET",
+            "description": "Everyone shuffles their hand",
+            "type": "spice",
+            "affect": {
+                "all": 1
+            }
+        },
+        {
+            "cardName": "Switcheroo",
+            "description": "Switch your hand with someone else's",
+            "type": "spice",
+            "affect": {
+                "player0": 0,
+                "player1": 0,
+                "player2": 0,
+                "player3": 0,
+                "player4": 0
+            }
+        },
+        {
+            "cardName": "Switcheroo",
+            "description": "Switch your hand with someone else's",
+            "type": "spice",
+            "affect": {
+                "player0": 0,
+                "player1": 0,
+                "player2": 0,
+                "player3": 0,
+                "player4": 0
+            }
+        },
+        {
+            "cardName": "Switcheroo",
+            "description": "Switch your hand with someone else's",
+            "type": "spice",
+            "affect": {
+                "player0": 0,
+                "player1": 0,
+                "player2": 0,
+                "player3": 0,
+                "player4": 0
+            }
+        },
+        {
+            "cardName": "Rotate!",
+            "description": "Rotate hands with the next person",
+            "type": "spice",
+            "affect": {
+                "all": 1
+            }
+        },
+        {
+            "cardName": "Clear the board!",
+            "description": "Clear the board of all bites and spices!",
+            "type": "spice",
+            "affect": {
+                "all": 1
+            }
+        },
+        {
+            "cardName": "Repairing!",
+            "description": "Clear the board of all spices!",
+            "type": "spice",
+            "affect": {
+                "all": 1
+            }
+        },
+        {
+            "cardName": "Repairing!",
+            "description": "Clear the board of all spices!",
+            "type": "spice",
+            "affect": {
+                "all": 1
+            }
+        },
+        {
+            "cardName": "Best friends!",
+            "description": "If that food dies, the buddy its tied with dies",
+            "type": "spice",
+            "affect": {
+                "app0": 0,
+                "app1": 0,
+                "app2": 0,
+                "app3": 0,
+                "app4": 0,
+                "dessert0": 0,
+                "dessert1": 0,
+                "dessert2": 0,
+                "dessert3": 0,
+                "dessert4": 0,
+                "drink0": 0,
+                "drink1": 0,
+                "drink2": 0,
+                "drink3": 0,
+                "drink4": 0,
+                "main0": 0,
+                "main1": 0,
+                "main2": 0,
+                "main3": 0,
+                "main4": 0
+            }
+        },
+        {
+            "cardName": "Best friends!",
+            "description": "If that food dies, the buddy its tied with dies",
+            "type": "spice",
+            "affect": {
+                "app0": 0,
+                "app1": 0,
+                "app2": 0,
+                "app3": 0,
+                "app4": 0,
+                "dessert0": 0,
+                "dessert1": 0,
+                "dessert2": 0,
+                "dessert3": 0,
+                "dessert4": 0,
+                "drink0": 0,
+                "drink1": 0,
+                "drink2": 0,
+                "drink3": 0,
+                "drink4": 0,
+                "main0": 0,
+                "main1": 0,
+                "main2": 0,
+                "main3": 0,
+                "main4": 0
+            }
+        },
+        {
+            "cardName": "I'm not full yet!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I'm not full yet!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I'm not full yet!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I'm not full yet!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "I'm not full yet!",
+            "description": "Take a bite out of anyone's food!",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Then can I have some of yours?",
+            "description": "If someone took a bite of your food, take a bite of theirs",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Then can I have some of yours?",
+            "description": "If someone took a bite of your food, take a bite of theirs",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Then can I have some of yours?",
+            "description": "If someone took a bite of your food, take a bite of theirs",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Then can I have some of yours?",
+            "description": "If someone took a bite of your food, take a bite of theirs",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "Then can I have some of yours?",
+            "description": "If someone took a bite of your food, take a bite of theirs",
+            "type": "digest",
+            "affect": {
+                "app0": 1,
+                "app1": 1,
+                "app2": 1,
+                "app3": 1,
+                "app4": 1,
+                "dessert0": 1,
+                "dessert1": 1,
+                "dessert2": 1,
+                "dessert3": 1,
+                "dessert4": 1,
+                "drink0": 1,
+                "drink1": 1,
+                "drink2": 1,
+                "drink3": 1,
+                "drink4": 1,
+                "main0": 1,
+                "main1": 1,
+                "main2": 1,
+                "main3": 1,
+                "main4": 1
+            }
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "You can't do that!",
+            "description": "Reject a player's action",
+            "type": "digest",
+            "affect": null
+        },
+        {
+            "cardName": "Fasting",
+            "description": "Skip a player's turn, no eating for you!",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "Fasting",
+            "description": "Skip a player's turn, no eating for you!",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "Fasting",
+            "description": "Skip a player's turn, no eating for you!",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "Fasting for two",
+            "description": "Skip a player's turn twice, no eating for you!",
+            "type": "digest",
+            "affect": {
+                "player0": 2,
+                "player1": 2,
+                "player2": 2,
+                "player3": 2,
+                "player4": 2
+            }
+        },
+        {
+            "cardName": "Fasting for two",
+            "description": "Skip a player's turn twice, no eating for you!",
+            "type": "digest",
+            "affect": {
+                "player0": 2,
+                "player1": 2,
+                "player2": 2,
+                "player3": 2,
+                "player4": 2
+            }
+        },
+        {
+            "cardName": "You can't eat that!",
+            "description": "Protect your food from bites for 1 turn",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "You can't eat that!",
+            "description": "Protect your food from bites for 1 turn",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "You can't eat that!",
+            "description": "Protect your food from bites for 1 turn",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "You can't eat that!",
+            "description": "Protect your food from bites for 1 turn",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "You can't eat that!",
+            "description": "Protect your food from bites for 1 turn",
+            "type": "digest",
+            "affect": {
+                "player0": 1,
+                "player1": 1,
+                "player2": 1,
+                "player3": 1,
+                "player4": 1
+            }
+        },
+        {
+            "cardName": "You can't eat that again!",
+            "description": "Protect your food from bites for 2 turns",
+            "type": "digest",
+            "affect": {
+                "player0": 2,
+                "player1": 2,
+                "player2": 2,
+                "player3": 2,
+                "player4": 2
+            }
+        },
+        {
+            "cardName": "You can't eat that again!",
+            "description": "Protect your food from bites for 2 turns",
+            "type": "digest",
+            "affect": {
+                "player0": 2,
+                "player1": 2,
+                "player2": 2,
+                "player3": 2,
+                "player4": 2
+            }
+        },
+        {
+            "cardName": "You can't eat that again!",
+            "description": "Protect your food from bites for 2 turns",
+            "type": "digest",
+            "affect": {
+                "player0": 2,
+                "player1": 2,
+                "player2": 2,
+                "player3": 2,
+                "player4": 2
+            }
+        },
+        {
+            "cardName": "No such thing as 5 second rule...",
+            "description": "Choose one of your foods to throw out...",
+            "type": "dropped"
+        }
+    ]
+}

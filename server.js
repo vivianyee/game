@@ -2,12 +2,27 @@ const { createServer } = require("http");
 const { parse } = require("url");
 const next = require("next");
 const WebSocket = require("ws");
+const { prisma } = require("./lib/prisma");
 
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const game = {}; // Stores { gameid: gamename: '', players: { 'socket': 'name' } }
-const webSocketPlayerGame = new Map(); // WebSockets to game name
+// {
+//   'gameid': {
+//     gamename: '',
+//     turn: 0,
+//     usedCard: 0,
+//     players: {
+//       // player name
+//       // num of bites, card num, app-main-dess-drink
+//       // card num x5
+//       'socketId': '^-^-^'
+//       'socketId': '^-^-^'
+//     }
+//   }
+// }
+const game = {};
+const webSocketPlayerGame = {};
 
 app.prepare().then(() => {
   const server = createServer((req, res) => {
@@ -21,48 +36,63 @@ app.prepare().then(() => {
 
   const wss = new WebSocket.Server({ server });
 
-  wss.on("connection", (ws) => {
-    console.log("New client connected");
-    ws.send(JSON.stringify(game));
-
-    ws.on("message", (message) => {
-      const data = JSON.parse(message);
-
-      wss.clients.forEach((client) => {
-        if (client.readyState === WebSocket.OPEN) {
-          switch (data.type) {
-            case "addPlayer":
-              const addPlayerData = data;
-              if (!game[addPlayerData.gameId]) {
-                game[addPlayerData.gameId] = {
-                  gameName: addPlayerData.gameName,
-                  players: new Map(),
-                };
-              }
-              game[addPlayerData].players.set(client, json.playerName);
-              webSocketPlayerGame.set(client, addPlayerData);
-            case "addGame":
-              const addGameData = data;
-              if (!game[addGameData.gameId]) {
-                game[addGameData.gameId] = {
-                  gameName: addGameData.gameName,
-                  players: new Map(),
-                };
-              }
-          }
-          client.send(JSON.stringify(game));
-        }
+  const loadInitialGameData = async () => {
+    try {
+      const loadedInitialGames = await prisma.game.findMany({
+        include: { players },
       });
-    });
+      loadedInitialGames.map;
+      wss.on("connection", (ws) => {
+        console.log("New client connected");
+        const socketId = uuidv4();
+        ws.send(JSON.stringify(game));
 
-    ws.on("close", () => {
-      const gameName = webSocketPlayerGame.get(ws);
-      if (gameName) {
-        game[gameName].players.delete(ws);
-      }
-      console.log("Client disconnected");
-    });
-  });
+        ws.on("message", (message) => {
+          const data = JSON.parse(message);
+
+          wss.clients.forEach((client) => {
+            if (client.readyState === WebSocket.OPEN) {
+              switch (data.type) {
+                case "addGame":
+                  if (!game[data.gameId]) {
+                    game[data.gameId] = {
+                      gameName: data.gameName,
+                      players: {},
+                    };
+                  }
+                case "addPlayer":
+                  if (game[data.gameId]) {
+                    game[data.gameId].players[socketId] = data.playerName;
+                    webSocketPlayerGame[socketId] = data.gameId;
+                  }
+                case "startGame":
+                  if (game[data.gameId]) {
+                    game[data.gameId].turn = 0;
+                  }
+              }
+              client.send(JSON.stringify(game));
+            }
+          });
+        });
+
+        ws.on("close", () => {
+          // remove from db
+          const gameId = webSocketPlayerGame[socketId];
+          webSocketPlayerGame.delete(socketId);
+          if (gameId) {
+            game[gameId].players.delete(socketId);
+          }
+          console.log("Client disconnected");
+        });
+      });
+    } catch (error) {
+      console.error("Error loading data:", error);
+    } finally {
+      await prisma.$disconnect();
+    }
+  };
+
+  loadInitialGameData();
 
   server.listen(8080, (err) => {
     if (err) throw err;
