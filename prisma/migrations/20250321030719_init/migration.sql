@@ -12,6 +12,7 @@ CREATE TABLE "Game" (
 CREATE TABLE "Player" (
     "id" TEXT NOT NULL,
     "playerName" TEXT NOT NULL,
+    "socketId" TEXT NOT NULL,
     "gameId" TEXT NOT NULL,
     "joinedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -20,6 +21,9 @@ CREATE TABLE "Player" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Game_gameName_key" ON "Game"("gameName");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Player_socketId_key" ON "Player"("socketId");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Player_playerName_gameId_key" ON "Player"("playerName", "gameId");

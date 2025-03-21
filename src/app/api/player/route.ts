@@ -5,17 +5,17 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { playerName, gameId } = body;
+    const { playerName, socketId, gameId } = body;
 
-    if (!playerName || !gameId) {
+    if (!playerName || !socketId || !gameId) {
       return NextResponse.json(
-        { error: "Player name, and gameId are required" },
+        { error: "Player name, socketId, and gameId are required" },
         { status: 400 }
       );
     }
 
     const newPlayer = await prisma.player.create({
-      data: { playerName, gameId },
+      data: { playerName, socketId, gameId },
       include: {
         game: {
           select: {

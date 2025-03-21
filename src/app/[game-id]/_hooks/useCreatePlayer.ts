@@ -4,13 +4,14 @@ export const useCreatePlayer = () => {
   const [isCreatingPlayer, setIsCreatingPlayer] = useState(false);
   const [newPlayerError, setNewPlayerError] = useState("");
 
-  const createNewPlayer = async (playerName: string, gameId: string) => {
+  const createNewPlayer = async (playerName: string, socketId: string, gameId: string) => {
     setIsCreatingPlayer(true);
     try {
       const res = await fetch("/api/player", {
         method: "POST",
         body: JSON.stringify({
           playerName,
+          socketId,
           gameId,
         }),
       });

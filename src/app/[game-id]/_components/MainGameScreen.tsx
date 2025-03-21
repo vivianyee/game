@@ -16,14 +16,14 @@ export default function MainGameScreen() {
 
   const gameId = searchParams.substring(1);
   const gameData: GameWebSocket = games[gameId];
-
+console.log(games)
   if (gameData) {
     return (
       <div>
         <h2>WELCOME TO {gameData.gameName}</h2>
         {!playerName ? (
           <CreatePlayerModal gameId={gameId} setPlayerName={setPlayerName} />
-        ) : gameData.turn ? (
+        ) : gameData.turn === 0 ? (
           <StartingScreen gameId={gameId} players={gameData.players} />
         ) : (
           <GameScreen gameData={gameData} />

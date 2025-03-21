@@ -39,12 +39,26 @@ app.prepare().then(() => {
   const loadInitialGameData = async () => {
     try {
       const loadedInitialGames = await prisma.game.findMany({
-        include: { players },
+        include: { players: true },
       });
-      loadedInitialGames.map;
+
+      loadedInitialGames.forEach((dbGame) => {
+        const dbPlayers = {};
+        dbGame.players.forEach((dbPlayer) => {
+          dbPlayers[dbPlayer.socketId] = dbPlayer.playerName;
+          webSocketPlayerGame[dbPlayer.socketId] = dbGame.id;
+        });
+        game[dbGame.id] = {
+          gameName: dbGame.gameName,
+          turn: 0,
+          players: dbPlayers,
+        };
+      });
+
       wss.on("connection", (ws) => {
+        let playerSocketId;
+
         console.log("New client connected");
-        const socketId = uuidv4();
         ws.send(JSON.stringify(game));
 
         ws.on("message", (message) => {
@@ -62,8 +76,9 @@ app.prepare().then(() => {
                   }
                 case "addPlayer":
                   if (game[data.gameId]) {
-                    game[data.gameId].players[socketId] = data.playerName;
-                    webSocketPlayerGame[socketId] = data.gameId;
+                    playerSocketId = data.socketId;
+                    game[data.gameId].players[data.socketId] = data.playerName;
+                    webSocketPlayerGame[data.socketId] = data.gameId;
                   }
                 case "startGame":
                   if (game[data.gameId]) {
@@ -75,12 +90,19 @@ app.prepare().then(() => {
           });
         });
 
-        ws.on("close", () => {
-          // remove from db
-          const gameId = webSocketPlayerGame[socketId];
-          webSocketPlayerGame.delete(socketId);
-          if (gameId) {
-            game[gameId].players.delete(socketId);
+        ws.on("close", async () => {
+          if (playerSocketId) {
+            await prisma.player.delete({
+              where: { socketId: playerSocketId },
+            });
+            const gameId = webSocketPlayerGame[playerSocketId];
+            delete webSocketPlayerGame[playerSocketId];
+            if (gameId) {
+              delete game[gameId].players[playerSocketId];
+            }
+            wss.clients.forEach((client) => {
+              client.send(JSON.stringify(game));
+            });
           }
           console.log("Client disconnected");
         });

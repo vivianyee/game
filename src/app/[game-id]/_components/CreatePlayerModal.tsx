@@ -5,6 +5,7 @@ import { useCreatePlayer } from "../_hooks/useCreatePlayer";
 import { Loading } from "@/components/Loading";
 import { WebSocketContext } from "@/contexts/WebSocketProvider";
 import { InputSubmit } from "@/components/InputSubmit";
+import { v4 as uuidv4 } from 'uuid';
 
 type Props = {
   gameId: string;
@@ -18,13 +19,15 @@ export default function CreatePlayerModal({ gameId, setPlayerName }: Props) {
   const { send } = useContext(WebSocketContext);
 
   const onClickCreatePlayer = async () => {
-    const newPlayerCreated = await createNewPlayer(name, gameId);
+    const socketId = uuidv4();
+    const newPlayerCreated = await createNewPlayer(name, socketId, gameId);
     if (send && newPlayerCreated) {
       setPlayerName(name);
       send(
         JSON.stringify({
           type: "addPlayer",
-          playerName: newPlayerCreated.id,
+          playerName: name,
+          socketId: socketId,
           gameId: gameId,
         })
       );
@@ -41,7 +44,7 @@ export default function CreatePlayerModal({ gameId, setPlayerName }: Props) {
       <InputSubmit
         setInputValue={setName}
         error={newPlayerError}
-        buttonLabel="Create Game"
+        buttonLabel="Join Game"
         onButtonClick={onClickCreatePlayer}
       />
     </div>

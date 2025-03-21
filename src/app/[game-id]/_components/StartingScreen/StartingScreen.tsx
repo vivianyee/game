@@ -31,7 +31,7 @@ export default function StartingScreen({ gameId, players }: Props) {
     <div>
       Players:
       {playerData.map((player) => {
-        return <p>{player}</p>;
+        return <p key={Object.values(player)[0]}>{player[1]}</p>;
       })}
       {error && error}
       <button onClick={startGame}>Start Game</button>
